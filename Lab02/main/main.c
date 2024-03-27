@@ -101,9 +101,6 @@ void app_main(void)
 
 	SSD1306_t dev;
 	ssd1306_bitmap_picture(&dev, uit_logo_bitmap);
-	// xTaskCreate(&task_ssd1306_display_pattern, "ssd1306_display_pattern",  2048, NULL, 6, NULL);
-	// xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
-	// vTaskDelay(100/portTICK_PERIOD_MS);
 	while (1)
 	{
 		// task_ssd1306_display_text("21522209-NNK\n21520655-NLC\n");
@@ -111,9 +108,5 @@ void app_main(void)
 		// task_ssd1306_display_clear();
 
 		ssd1306_display_picture(&dev);
-		// vTaskDelay(500 / portTICK_PERIOD_MS);
-		// task_ssd1306_display_clear();
 	}
-	// xTaskCreate(&task_ssd1306_contrast, "ssid1306_contrast", 2048, NULL, 6, NULL);
-	// xTaskCreate(&task_ssd1306_scroll, "ssid1306_scroll", 2048, NULL, 6, NULL);
 }
