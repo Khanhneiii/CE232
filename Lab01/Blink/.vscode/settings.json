@@ -3,5 +3,6 @@
   "files.associations": {
     "cstdarg": "c",
     "stdio.h": "c"
-  }
+  },
+  "idf.adapterTargetName": "esp32"
 }

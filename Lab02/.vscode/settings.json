@@ -1,0 +1,17 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "files.associations": {
+    "ssd1306.h": "c",
+    "string.h": "c",
+    "task.h": "c",
+    "i2c.h": "c",
+    "sdkconfig.h": "c",
+    "freertos.h": "c",
+    "stdio.h": "c",
+    "font8x8_basic.h": "c",
+    "esp_log.h": "c"
+  },
+  "idf.adapterTargetName": "esp32",
+  "idf.portWin": "COM21",
+  "idf.flashType": "UART"
+}

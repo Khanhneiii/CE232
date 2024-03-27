@@ -2,6 +2,9 @@
 #include <driver/gpio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "esp_log.h"
+
+const char *TAG = "Lab1";
 
 void app_main(void)
 {
@@ -15,9 +18,8 @@ void app_main(void)
     uint8_t state = 0;
     while (1) {
         gpio_set_level(GPIO_NUM_2,state);
-        printf("LED state: %d\r\n",state);
-        // vtaskm
-        vTaskDelay(1000/portTICK_PERIOD_MS);
+        ESP_LOGI(TAG,"LED state: %d\r\n",state);
+        vTaskDelay(500/portTICK_PERIOD_MS);
         state = !state;
     }
 
