@@ -1,0 +1,21 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "files.associations": {
+    "mqtt_client.h": "c",
+    "freertos.h": "c",
+    "event_groups.h": "c",
+    "ble_compatibility.h": "c",
+    "esp_log.h": "c",
+    "esp_gap_ble_api.h": "c",
+    "wifi_connect.h": "c",
+    "random": "c",
+    "mqtt.h": "c",
+    "stdio.h": "c",
+    "string.h": "c",
+    "thread": "c",
+    "esp_wifi.h": "c"
+  },
+  "idf.adapterTargetName": "esp32",
+  "idf.portWin": "COM5",
+  "idf.flashType": "UART"
+}

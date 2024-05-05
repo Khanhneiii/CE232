@@ -224,22 +224,22 @@ static void i2c_test_task(void *arg)
     int cnt = 0;
     while (1) {
         ESP_LOGI(TAG, "TASK[%d] test cnt: %d", task_idx, cnt++);
-        ret = i2c_master_sensor_test(I2C_MASTER_NUM, &sensor_data_h, &sensor_data_l);
-        xSemaphoreTake(print_mux, portMAX_DELAY);
-        if (ret == ESP_ERR_TIMEOUT) {
-            ESP_LOGE(TAG, "I2C Timeout");
-        } else if (ret == ESP_OK) {
-            printf("*******************\n");
-            printf("TASK[%d]  MASTER READ SENSOR( BH1750 )\n", task_idx);
-            printf("*******************\n");
-            printf("data_h: %02x\n", sensor_data_h);
-            printf("data_l: %02x\n", sensor_data_l);
-            printf("sensor val: %.02f [Lux]\n", (sensor_data_h << 8 | sensor_data_l) / 1.2);
-        } else {
-            ESP_LOGW(TAG, "%s: No ack, sensor not connected...skip...", esp_err_to_name(ret));
-        }
-        xSemaphoreGive(print_mux);
-        vTaskDelay((DELAY_TIME_BETWEEN_ITEMS_MS * (task_idx + 1)) / portTICK_PERIOD_MS);
+        // ret = i2c_master_sensor_test(I2C_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        // xSemaphoreTake(print_mux, portMAX_DELAY);
+        // if (ret == ESP_ERR_TIMEOUT) {
+        //     ESP_LOGE(TAG, "I2C Timeout");
+        // } else if (ret == ESP_OK) {
+        //     printf("*******************\n");
+        //     printf("TASK[%d]  MASTER READ SENSOR( BH1750 )\n", task_idx);
+        //     printf("*******************\n");
+        //     printf("data_h: %02x\n", sensor_data_h);
+        //     printf("data_l: %02x\n", sensor_data_l);
+        //     printf("sensor val: %.02f [Lux]\n", (sensor_data_h << 8 | sensor_data_l) / 1.2);
+        // } else {
+        //     ESP_LOGW(TAG, "%s: No ack, sensor not connected...skip...", esp_err_to_name(ret));
+        // }
+        // xSemaphoreGive(print_mux);
+        // vTaskDelay((DELAY_TIME_BETWEEN_ITEMS_MS * (task_idx + 1)) / portTICK_PERIOD_MS);
         //---------------------------------------------------
 #if SOC_I2C_NUM > 1
         for (i = 0; i < DATA_LENGTH; i++) {
